@@ -1,6 +1,6 @@
 applicationType: default
-defaultPackage: org.grails
+defaultPackage: org.grails.artifact
 testFramework: spock
 sourceLanguage: java
 buildTool: gradle
-features: [annotation-api, app-name, gradle, http-client, java, java-application, logback, netty-server, readme, shade, spock, yaml]
+features: [annotation-api, app-name, cache-caffeine, data, data-jdbc, gradle, http-client, java, java-application, jdbc-hikari, logback, management, mysql, netty-server, openapi, readme, security-annotations, security-jwt, shade, spock, testcontainers, yaml]

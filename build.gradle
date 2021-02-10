@@ -5,7 +5,7 @@ plugins {
 }
 
 version = "0.1"
-group = "org.grails"
+group = "org.grails.artifact"
 
 repositories {
     mavenCentral()
@@ -17,21 +17,34 @@ micronaut {
     testRuntime("spock2")
     processing {
         incremental(true)
-        annotations("org.grails.*")
+        annotations("org.grails.artifact.*")
     }
 }
 
 dependencies {
+    annotationProcessor("io.micronaut.data:micronaut-data-processor")
+    annotationProcessor("io.micronaut.openapi:micronaut-openapi")
+    annotationProcessor("io.micronaut.security:micronaut-security-annotations")
     implementation("io.micronaut:micronaut-validation")
     implementation("io.micronaut:micronaut-runtime")
     implementation("javax.annotation:javax.annotation-api")
     implementation("io.micronaut:micronaut-http-client")
+    implementation("io.swagger.core.v3:swagger-annotations")
+    implementation("io.micronaut:micronaut-management")
+    implementation("io.micronaut.sql:micronaut-jdbc-hikari")
+    implementation("io.micronaut.data:micronaut-data-jdbc")
+    implementation("io.micronaut.security:micronaut-security-jwt")
+    implementation("io.micronaut.cache:micronaut-cache-caffeine")
     runtimeOnly("ch.qos.logback:logback-classic")
+    runtimeOnly("mysql:mysql-connector-java")
+    testImplementation("org.testcontainers:testcontainers")
+    testImplementation("org.testcontainers:spock")
+    testImplementation("org.testcontainers:mysql")
 }
 
 
 application {
-    mainClass.set("org.grails.Application")
+    mainClass.set("org.grails.artifact.Application")
 }
 
 java {

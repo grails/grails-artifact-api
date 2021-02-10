@@ -1,3 +1,23 @@
 micronaut:
   application:
     name: grailsArtifactApi
+  server:
+    port: 8888
+  security:
+    authentication: bearer
+    token:
+      jwt:
+        signatures:
+          secret:
+            generator:
+              secret: '"${JWT_GENERATOR_SIGNATURE_SECRET:pleaseChangeThisSecretForANewOne}"'
+datasources:
+  default:
+    url: jdbc:mysql://localhost:3306/grails-artifact-api
+    driverClassName: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 'password'
+    schema-generate: CREATE
+    dialect: MYSQL
+jackson:
+  property-naming-strategy: SNAKE_CASE

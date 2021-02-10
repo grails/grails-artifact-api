@@ -1,4 +1,4 @@
-package org.grails
+package org.grails.artifact
 
 import io.micronaut.runtime.EmbeddedApplication
 import io.micronaut.test.extensions.spock.annotation.MicronautTest
